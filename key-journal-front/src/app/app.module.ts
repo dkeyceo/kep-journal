@@ -2,13 +2,31 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { CreateAcckCardComponent } from './create-acck-card/create-acck-card.component';
+import { AddUserCardComponent } from './add-user-card/add-user-card.component';
+import { ListAccksComponent } from './list-accks/list-accks.component';
+import { ListUsersComponent } from './list-users/list-users.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    CreateAcckCardComponent,
+    AddUserCardComponent,
+    ListAccksComponent,
+    ListUsersComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

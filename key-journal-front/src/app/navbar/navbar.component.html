@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Журнал реєстрації ЗНОК</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/home">
+                <i class="fas fa-home"></i>На головну</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/list-accks">
+                <i class="fas fa-list-alt"></i>Перелік КНЕДП</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/list-users">
+                <i class="fas fa-list-alt"></i>Перелік осіб</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/create-acck">
+                <i class="fas fa-toolbox"></i>Створити картку КНЕДП</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/add-user">
+                <i class="fas fa-plus-circle"></i>Додати нового користувача</a>
+          </li>
+        </ul>
+        <!--
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    Hello, {{username}}
+                </a>
+            </li>
+            <button *ngIf="!isLogged" class="mr-3 btn btn-outline-warning" routerLink="/signup">
+              <i class="fas fa-user-plus"></i>Create new User</button>
+            <button *ngIf="!isLogged" class="btn btn-success" (click)="login()">
+                <i class="fas fa-sign-in-alt"></i>Login</button>
+            <button *ngIf="isLogged"  class="btn btn-danger" (click)="logout()">
+                <i class="fas fa-sign-out-alt"></i>Logout</button>
+        </ul>
+    -->
+      </div>
+    </div>
+  </nav>

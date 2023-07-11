@@ -9,10 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/accks")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ACCKController {
     @Autowired
     private ACCKRepository acckRepository;
