@@ -1,6 +1,7 @@
 package com.dkey.kep.controller;
 
 import com.dkey.kep.dto.ACCKDto;
+import com.dkey.kep.dto.Message;
 import com.dkey.kep.model.ACCK;
 import com.dkey.kep.repository.ACCKRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,8 +49,8 @@ public class ACCKController {
     public ResponseEntity<?> delete(@PathVariable("id") Integer id){
         if(!acckRepository.findById(id).isEmpty()){
             acckRepository.deleteById(id);
-            return new ResponseEntity("Deleted successfully", HttpStatus.OK);
+            return new ResponseEntity(new Message("Deleted successfully"), HttpStatus.OK);
         }
-        return new ResponseEntity("Something wrong with request", HttpStatus.BAD_REQUEST);
+        return new ResponseEntity(new Message("Something wrong with request"), HttpStatus.BAD_REQUEST);
     }
 }

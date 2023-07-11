@@ -13,17 +13,17 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Getter
 @Setter
-public class KepRecipient {
+public class UserEDP {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne(optional = false)
     private ACCK acck;
 
-    private String recipientName;
-    private LocalDate dateBegin;
-    private LocalDate dateEnd;
-
-    private String responsiblePerson;
+    private String userPIB;
+    private String userResponsiblePIB;
+    private LocalDate dateFrom;
+    private LocalDate dateTo;
+    private String identityZNOK;
 
 }

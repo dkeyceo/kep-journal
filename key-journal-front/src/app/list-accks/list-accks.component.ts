@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AcckService } from '../services/acck.service';
 import { Acck } from '../models/Acck';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-accks',
@@ -11,7 +12,8 @@ export class ListAccksComponent implements OnInit {
 
   accks: Acck[] = [];
 
-  constructor(private acckService: AcckService) { }
+  constructor(private acckService: AcckService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getAccks();
@@ -26,4 +28,17 @@ export class ListAccksComponent implements OnInit {
     })
   }
 
+  onDelete(id: number){
+    this.acckService.deleteAccksById(id)
+    .subscribe(data => {
+      this.toastr.success('КНЕДП видалено', 'OK', {
+        timeOut: 3000, positionClass:'toast-top-right'
+      });
+      this.getAccks();
+    }, err => {
+      this.toastr.error(err.error.message, 'Fail', {
+        timeOut: 3000, positionClass:'toast-top-right'
+      });
+    });
+  }
 }

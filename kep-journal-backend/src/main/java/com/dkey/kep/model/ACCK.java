@@ -1,6 +1,7 @@
 package com.dkey.kep.model;
 
 import com.dkey.kep.dto.ACCKDto;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,7 +22,8 @@ public class ACCK {
     private Integer id;
     private String name;
     @OneToMany(mappedBy = "acck", fetch = FetchType.EAGER)
-    private List<KepRecipient> recipients = new ArrayList<>();
+    @JsonIgnore
+    private List<UserEDP> recipients = new ArrayList<>();
 
     public ACCK(ACCKDto acckDto){
         this.name = acckDto.getName();

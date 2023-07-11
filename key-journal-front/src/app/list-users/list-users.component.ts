@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../services/users.service';
+import { UserEDP } from '../models/UserEDP';
 
 @Component({
   selector: 'app-list-users',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListUsersComponent implements OnInit {
 
-  constructor() { }
+  usersEdp: UserEDP[] = [];
+
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
+    this.getAllUsers();
   }
 
+  getAllUsers(){
+    this.usersService.getUsersEDP().subscribe(data => {
+      this.usersEdp = data;
+    }, err => {
+      console.log(err.error.message);
+    });
+  }
+
+  onDelete(id: number){
+
+  }
 }

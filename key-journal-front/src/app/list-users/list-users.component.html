@@ -1,1 +1,46 @@
-<p>list-users works!</p>
+<div class="container mt-2">
+    <table class="table text-center">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Порядковий номер</th>
+        <th scope="col">Найменування КНЕДП</th>
+        <th scope="col">ПІБ Користувача ЕДП</th>
+        <th scope="col">ПІБ відповідальної особи</th>
+        <th  scope="col">Чинний з</th>
+        <th  scope="col">Чинний по</th>
+        <th  scope="col">Ідентифікатор ЗНОК</th>
+
+        <th scope="col">Detail</th>
+        <th  scope="col">Update</th>
+        <th  scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersEdp; let i = index">
+        <td>{{i + 1}}</td>
+        
+        <td>{{user.acck['name']}}</td>
+        <td>{{user.userPIB}}</td>
+        <td>{{user.userResponsiblePIB}}</td>
+        <td>{{user.dateFrom}}</td>
+        <td>{{user.dateTo}}</td>
+        <td>{{user.identityZNOK}}</td>
+        <td><button class="btn btn-outline-primary" routerLink="/detail/{{user.id}}">
+            <i class="far fa-eye"></i>
+          Detail</button></td>
+
+
+        
+        <td ><button class="btn btn-outline-warning" routerLink="/update/{{user.id}}">
+          <i class="far fa-edit"></i>
+        Edit</button></td>
+        <td ><button 
+          (click)="onDelete(user.id)"
+          class="btn btn-outline-danger">
+          <i class="far fa-trash-alt"></i>
+        Delete</button></td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
